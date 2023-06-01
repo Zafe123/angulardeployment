@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { HttpClient } from '@angular/common/http';
-// import { matchpassword } from './usermatchpassword.validator';
+import { matchpassword } from './usermatchpassword.validator';
 
 
 
@@ -52,7 +52,7 @@ export class UserinfoComponent implements OnInit {
       newpassword: [''],
       confirmpassword: ['']
     }, {
-      // validators: matchpassword
+      validators: matchpassword
     });
     this.onFormChanges();
   }
