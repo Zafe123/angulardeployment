@@ -21,6 +21,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatPaginatorModule } from '@angular/material/paginator';
 // Components
 import { AppLayoutComponent } from './app-layout/app-layout.component';
 import { EmpAddEditComponent } from './emp-add-edit/emp-add-edit.component';
@@ -63,7 +64,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatProgressBarModule,
     MatSidenavModule,
     MatListModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatPaginatorModule
 
   ],
   providers: [],

@@ -1,1 +1,35 @@
-<p>login works!</p>
+<h1>LOGIN WORKS</h1>
+
+
+<mat-card class="example-card">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <h1 class="login">LOGIN PAGE</h1>
+    </mat-card-header>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="example-container">
+            <h2 class="email">Email</h2>
+            <mat-form-field appearance="outline">
+                <mat-label>Enter your email</mat-label>
+                <input formControlName="email" matInput placeholder="pat@example.com" [email]="true" required>
+                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+
+            <h2 class="email">Password</h2>
+            <mat-form-field appearance="outline">
+                <mat-label>Enter your password</mat-label>
+                <input formControlName="password" required matInput [type]="hide ? 'password' : 'text'">
+                <button type="button" mat-icon-button matSuffix (click)="hide = !hide"
+                    [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+        <mat-card-actions class="buttons">
+            <button mat-stroked-button color="primary" type="submit" [disabled]="loginForm.invalid">Login</button>
+            <a routerLink="/signup" class="register">
+                <button mat-stroked-button color="warn" class="clear" type="button">Register</button>
+            </a>
+        </mat-card-actions>
+    </form>
+</mat-card>
